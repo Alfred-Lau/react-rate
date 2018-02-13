@@ -1,0 +1,8 @@
+.items {
+    list-style-type: none;    
+    width: 300px;
+}
+
+.item{
+    border: 1px solid #eee;    
+}
