@@ -6,6 +6,7 @@ import Context from './components/Context';
 import Fragment from './components/Fragment';
 import ErrorBoundry from './components/ErrorBoundry';
 import Widget from './components/Widget';
+import RenderProps from './components/RenderProps';
 
 class App extends Component {
     constructor (props, ctx) {
@@ -40,6 +41,7 @@ class App extends Component {
                 <ErrorBoundry>
                     <Widget></Widget>
                 </ErrorBoundry>
+                <RenderProps></RenderProps>
             </div>
         );
     }
