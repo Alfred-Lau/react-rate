@@ -2,11 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends React.Component {
-    constructor (props, ctx) {
-        super(props, ctx);
-        console.log('button');
-        console.log(ctx);
-    }
     render () {
         return (
             <button style={{background: this.context.color}}>
@@ -23,8 +18,8 @@ Button.contextTypes = {
 class Message extends React.Component {
     constructor (props, ctx) {
         super(props);
-        console.log('message');
-        console.log(ctx);
+        // console.log('message');
+        // console.log(ctx);
     }
     render () {
         return (
@@ -47,7 +42,7 @@ Message.contextTypes = {
 class Context extends React.Component {
     constructor (props, ctx) {
         super(props);
-        console.log(ctx);
+        // console.log(ctx);
         this.state = {
             style: 'blue'
         };

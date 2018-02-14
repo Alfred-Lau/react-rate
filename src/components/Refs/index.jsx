@@ -2,7 +2,7 @@ import React from 'react';
 
 class CustomTextInput extends React.Component {
     handleRefs () {
-        console.log('i am clicked');
+        // console.log('i am clicked');
     }
     render () {
         return (
@@ -14,7 +14,7 @@ class CustomTextInput extends React.Component {
 }
 class Parent extends React.Component {
     componentWillReceiveProps() {
-        console.log('child- willreceive');
+        // console.log('child- willreceive');
     }
     render () {
         return (
@@ -29,32 +29,31 @@ class Parent extends React.Component {
 class Grandparent extends React.Component {
     constructor (props, ctx) {
         super(props);
-        console.log(ctx);
+        // console.log(ctx);
         this.state = {
             name:'before change.'
         };
     }
     componentWillMount() {
-        console.log('will-mount');
+        // console.log('will-mount');
     }
     componentDidMount () {
-        console.log('didmount');
+        // console.log('didmount');
     }
 
     componentWillUpdate() {
-        console.log('will-update');
+        // console.log('will-update');
     }
     shouldComponentUpdate() {
         return true;
     }
     componentWillUnmount() {
-        console.log('will-unmount');
+        // console.log('will-unmount');
     }
     componentDidUpdate() {
-        console.log('did-update');
+        // console.log('did-update');
     }
     render() {
-        console.log('render');
         return (
             <div>
                 <input

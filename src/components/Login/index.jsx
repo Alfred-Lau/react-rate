@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import { fakeAuth } from '../../util/auth';
-import {Redirect} from 'react-router-dom';
+// import { fakeAuth } from '../../util/auth';
+import { Redirect } from 'react-router-dom';
 
-export default class Login extends Component {
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as actionsFromOtherFiles from '../../actions/login';
+
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirectToReferrer: false
+            isLogin: false
         };
     }
 
     login = () => {
-        fakeAuth.authenticate(() => {
-            this.setState({ redirectToReferrer: true });
+        this.props.useractions.update({
+            isLogin:true
+        });
+        this.setState({
+            isLogin:true
         });
     }
 
@@ -22,9 +30,9 @@ export default class Login extends Component {
                 pathname: '/'
             }
         };
-        const { redirectToReferrer } = this.state;
+        const { isLogin } = this.state;
 
-        if (redirectToReferrer) {
+        if (isLogin) {
             return (
                 < Redirect to = {
                     from
@@ -35,8 +43,24 @@ export default class Login extends Component {
         return (
             <div>
                 <p>You must log in to view the page at {from.pathname}</p>
-                <button onClick={this.login.bind(this)}>Log in</button>
+                <button onClick={this.login}>Log in</button>
             </div>
         );
     }
 }
+
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        login : state.login
+    };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        useractions : bindActionCreators(actionsFromOtherFiles, dispatch)
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

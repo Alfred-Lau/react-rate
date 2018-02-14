@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import List from '../List/List';
 import Grandparent from '../Refs';
 import Context from '../Context';
 import Fragment from '../Fragment';
@@ -9,7 +8,7 @@ import RenderProps from '../RenderProps';
 
 import { Link } from 'react-router-dom';
 
-export default class Home extends Component {
+class Home extends Component {
     constructor (props, ctx) {
         super(props);
     }
@@ -29,23 +28,24 @@ export default class Home extends Component {
         return (
             <div>
                 <p>
-                    Home
+          Home
                 </p>
                 <p>
                     <Link to='/list'> List
                     </Link>
                 </p>
                 <p>
-                    <Link to='/private'>
-                        Private    
+                    <Link to='/private'> Private
                     </Link>
                 </p>
                 <Grandparent></Grandparent>
                 <Context messages={messages}></Context>
                 <table>
-                    <tr>
-                        <Fragment />
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <Fragment />
+                        </tr>
+                    </tbody>
                 </table>
                 <ErrorBoundry>
                     <Widget></Widget>
@@ -55,3 +55,5 @@ export default class Home extends Component {
         );
     }
 }
+
+export default Home;

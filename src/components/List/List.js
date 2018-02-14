@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import Page from '../Page';
 
 // droplist
