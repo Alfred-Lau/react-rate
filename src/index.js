@@ -1,19 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+
+
+
+
+
 
 
 // // Children component
 // class Children extends React.Component {
 //     constructor (props, context) {
-//         super(props, context);
+//         super(props, context)
 
 //         this.state = {
 //             name: this.context.name
-//         };
+//         }
 //     }
 
 //     render () {
@@ -29,7 +41,7 @@ import registerServiceWorker from './registerServiceWorker';
 //                     {`print age: ${this.context.print(this.context.age)}`} 
 //                 </li>
 //             </ul>
-//         );
+//         )
 //     }
 // }
 
@@ -37,7 +49,7 @@ import registerServiceWorker from './registerServiceWorker';
 //     name: PropTypes.string,
 //     age: PropTypes.number,
 //     print: PropTypes.func
-// };
+// }
 
 // // Parent component
 // class Parent extends React.Component {
@@ -45,7 +57,7 @@ import registerServiceWorker from './registerServiceWorker';
 //         return {
 //             name: 'mars',
 //             age: 18
-//         };
+//         }
 //     }
 
 //     render () {
@@ -56,17 +68,17 @@ import registerServiceWorker from './registerServiceWorker';
 //                     {this.props.children}
 //                 </div>
 //             </div>
-//         );
+//         )
 //     }
 // }
 
 // Parent.contextTypes = {
 //     name: PropTypes.string
-// };
+// }
 // Parent.childContextTypes = {
 //     age: PropTypes.number,
 //     name: PropTypes.string
-// };
+// }
 
 // // App component
 // class App extends React.Component {
@@ -74,7 +86,7 @@ import registerServiceWorker from './registerServiceWorker';
 //         return {
 //             name: 'mars',
 //             print: (m) => m
-//         };
+//         }
 //     }
 
 //     render () {
@@ -82,15 +94,11 @@ import registerServiceWorker from './registerServiceWorker';
 //             <Parent>
 //                 <Children />
 //             </Parent>
-//         );
+//         )
 //     }
 // }
 
 // App.childContextTypes = {
 //     name: PropTypes.string,
 //     print: PropTypes.func
-// };
-
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// }

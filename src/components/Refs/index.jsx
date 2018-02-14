@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class CustomTextInput extends React.Component {
     handleRefs () {

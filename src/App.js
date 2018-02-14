@@ -1,47 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Home from './components/Home';
+import Page from './components/Page';
 import List from './components/List/List';
-import Grandparent from './components/Refs';
-import Context from './components/Context';
-import Fragment from './components/Fragment';
-import ErrorBoundry from './components/ErrorBoundry';
-import Widget from './components/Widget';
-import RenderProps from './components/RenderProps';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import Protected from './components/Protected';
 
 class App extends Component {
-    constructor (props, ctx) {
-        super(props);
-        this.state = {
-            data: [1, 2, 3]
-        };
-    }
     render () {
-        const messages = [
-            {
-                id: 1,
-                text: 'aaa'
-            }, {
-                id: 2,
-                text: 'bbb'
-            }, {
-                id: 3,
-                text: 'ccc'
-            }
-        ];
         return (
             <div className='App'>
-                <Grandparent></Grandparent>
-                <Context messages={messages}></Context>
-                <List items={this.state.data}></List>
-                <table>
-                    <tr>
-                        <Fragment />
-                    </tr>
-                </table>
-                <ErrorBoundry>
-                    <Widget></Widget>
-                </ErrorBoundry>
-                <RenderProps></RenderProps>
+        outside the router
+                <Router>
+                    <div>
+                        <Route exact path='/' component={Home}></Route>
+                        <Route path='/list' component={List}></Route>
+                        <Route path='/login' component={Login}></Route>
+                        <PrivateRoute path='/private' component={Protected} />
+                    </div>
+                </Router>
             </div>
         );
     }
